@@ -13,7 +13,8 @@ import java.util.List;
 @Builder
 public class Pedido {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -29,6 +30,7 @@ public class Pedido {
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
 
+    @Builder.Default
     private LocalDateTime dataPedido = LocalDateTime.now();
 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
