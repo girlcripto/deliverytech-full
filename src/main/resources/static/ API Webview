@@ -1,0 +1,50 @@
+🌐 O que é a API Webview
+Permite que extensões criem interfaces HTML personalizadas dentro do VS Code.
+
+Usada para visualizações ricas como renderização de Markdown ou interfaces interativas.
+
+🧠 Quando usar Webviews
+Use apenas quando as APIs nativas do VS Code não forem suficientes.
+
+Webviews consomem mais recursos e devem ser bem integradas ao estilo do VS Code.
+
+🛠️ Como criar um Webview
+Use window.createWebviewPanel para criar um painel.
+
+Defina o conteúdo HTML com webview.html.
+
+Exemplo prático: extensão “Cat Coding” que mostra GIFs de gatos codando.
+
+🔄 Atualização e ciclo de vida
+Webviews podem ser atualizados dinamicamente.
+
+Devem ser descartados corretamente para evitar erros.
+
+Eventos como onDidDispose e onDidChangeViewState ajudam a gerenciar o estado.
+
+📦 Carregamento de conteúdo local
+Use asWebviewUri para carregar recursos locais com segurança.
+
+Configure localResourceRoots para limitar acesso a diretórios específicos.
+
+🔐 Segurança
+Minimize permissões (ex: scripts, acesso a arquivos).
+
+Use políticas de segurança de conteúdo (CSP).
+
+Sempre sanitize entradas do usuário.
+
+💬 Comunicação entre extensão e Webview
+Use postMessage para enviar dados da extensão para o Webview.
+
+Use acquireVsCodeApi().postMessage() para enviar dados do Webview para a extensão.
+
+🧠 Persistência de estado
+Use getState e setState para salvar/restaurar estado.
+
+Para persistência entre sessões, registre um WebviewPanelSerializer.
+
+🎨 Temas e acessibilidade
+Webviews podem adaptar-se ao tema do VS Code usando classes CSS e variáveis.
+
+Suporte a leitores de tela e preferências de movimento reduzido.
