@@ -83,4 +83,4 @@ docker-compose up --build
 
 ## 📬 Contato
 
-[Seu Email] - [LinkedIn] - [GitHub]
+[uskadmedia10@gmail.com] - [LinkedIn] - [GitHub]
